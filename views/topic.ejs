@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>webboard</title>
+</head>
+
+<body>
+    <div class="nav-bar-mobile">
+        <a href="/" class="logo"></a>
+        <div class="nav-menu">
+            <% if(email == null) { %>
+                <a href="/login" class="add-topic"></a>
+                <a href="/login" class="account"></a>
+            <% } %>
+            <% if(email !== null) { %>
+                <a href="/add" class="add-topic"></a>
+                <div class="profile-btn"><%= username.charAt(0) %></div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="profile-bg hide"></div>
+        <div class="profile-menu hide">
+            <div class="close-btn">
+                <span class="left-line"></span>
+                <span class="right-line"></span>
+            </div>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/mytopic">My topic</a>
+                </li>
+                <li>
+                    <a href="/logout">Sign out</a>
+                </li>
+            </ul>
+        </div>
+
+    <div class="topicpage">
+        <h4><%= topicData.topic.title %></h4>
+        <h5><%= topicData.topic.message %></h5>
+        <h6>
+            Name : <%= topicData.topic.username %><br>
+            Date : <%= topicData.topicDate %>
+        </h6>
+    </div>
+    
+    <div class="comment-box">
+        <h4>Comments</h4>
+        <% if(commentsData.comments.length > 0) { %>
+            <% for (i=0;i<commentsData.comments.length;i++) { %>
+            <div class="comment-text">
+                <h5><%= commentsData.comments[i].comment %></h5>
+                <h6>
+                    Name : <%= commentsData.comments[i].username %><br>
+                    Date : <%= commentsData.commentsDate[i] %>
+                </h6>
+            </div>
+            <% } %>
+        <% } %>
+        <div class="comment-add-box">
+            <% if(email == null) { %>
+                <form method="post">
+                    <textarea id="comment" name="comment" placeholder="Please login before comment." disabled></textarea>
+                </form>
+            <% } %>
+            <% if(email !== null) { %>
+                <form method="post">
+                    <textarea id="comment" name="comment" placeholder="Comment here"></textarea>
+                    <% if (typeof err !== 'undefined') { %>
+                        <div class="msg">
+                            <div class="danger-mark"></div>
+                            <span><%= err.msg %></span>    
+                        </div>
+                    <% } %>
+                    <button type="submit" class="confirm">Comment</button>
+                    <button type="reset" class="cancel">Cancel</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

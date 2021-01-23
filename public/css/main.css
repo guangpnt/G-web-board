@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 10px;
+    overflow-x: hidden;
+    background-color: #133b5c;
+    color: #fcdab7;
+}
+
+a {
+    text-decoration: none;
+    color: #fcdab7;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: .8rem; 
+}
+
+textarea {
+    resize: none;
+}
+
+.hide {
+    display: none!important;
+}
+
+.msg {
+    display: flex;
+    align-items: center;
+    color: #E2574C;
+    text-align: left;
+    font-size: .8rem;
+}
+
+.danger-mark {
+    background-image: url('../images/danger-mark.svg');    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: .8rem;
+    height: .8rem;
+    margin-right: .2rem;
+}
+
+.nav-bar-mobile {
+    background-color: #1d2d50;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background-image: url('../images/logo.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 .5rem;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.search {
+    background-image: url('../images/search.svg');
+    width: 1.3rem;
+    height: 1.3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 .5rem;
+}
+
+.add-topic {
+    background-image: url('../images/add.svg');
+    width: 1.3rem;
+    height: 1.3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 .5rem;
+}
+
+.account {
+    background-image: url('../images/account.svg');
+    width: 1.3rem;
+    height: 1.3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 .5rem;
+}
+
+.profile-btn {
+    color: #1d2d50;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #fcdab7;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 100%;
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.profile-menu {
+    color: #1d2d50;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #fcdab7;
+    padding: 1.5rem 1rem;
+    position: absolute;
+    height: 100vh;
+    width: 12rem;
+    top: 0;
+    right: 0;
+}
+
+.close-btn {
+    position: relative;
+    margin-left: 9rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.left-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)rotate(45deg);
+    background-color: #1d2d50;
+    width: 1.5rem;
+    height: .2rem;
+    border-radius: 5rem;
+}
+
+.right-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)rotate(-45deg);
+    background-color: #1d2d50;
+    width: 1.5rem;
+    height: .2rem;
+    border-radius: 5rem;
+}
+
+.profile-menu li {
+    color: #1d2d50;
+    margin: .5rem 0;;
+}
+
+.profile-menu a {
+    color: #1d2d50;
+}
+
+.profile-menu a:hover {
+    color: #1e5f74;
+}
+
+.profile-bg {
+    background-color: #0000002f;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+}
+
+.homepage {
+    text-align: center;
+}
+
+.homepage h1 {
+    margin: 1rem 0;
+}
+
+.topic-box {
+    margin: 0 auto;
+    width: 25rem;
+}
+
+.topic-box h5 {
+    color: #fcd9b770;
+}
+
+.topic-item {
+    background-color: #1e5f74;
+    width: 100%;
+    height: 5rem;
+    margin: .5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+}
+
+.topic-info {
+    text-align: left;
+}
+
+.fav-btn {
+    background-image: url('../images/star.svg');
+    width: 1rem;
+    height: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fav-btn:hover {
+    background-image: url('../images/star-fill.svg');
+}
+
+.login-box {
+    background-color: #ffffff;
+    width: 25rem;
+    padding: 2.5rem;
+    margin: 4rem auto;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0rem 0rem 2rem 0 #00000042;
+}
+
+.login-box h1 {
+    color: #000000;
+}
+
+.auth {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem auto;
+}
+
+.google-btn {
+    color: #ffffff;
+    background-color: #DD4B39;
+    background-position: center;
+    background-size: cover;
+    width: 9.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .2rem;
+}
+
+.google-btn:hover {
+    background-color: #b43e2f;
+}
+
+.google-btn:hover .google-icon {
+    background-image: url('../images/google-hover.svg');
+}
+
+.google-icon {
+    background-image: url('../images/google.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+}
+
+.facebook-btn {
+    color: #ffffff;
+    background-color: #3B5998;
+    background-position: center;
+    background-size: cover;
+    width: 9.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .2rem;
+}
+
+.facebook-btn:hover {
+    background-color: #2f4679;
+}
+
+.facebook-btn:hover .facebook-icon {
+    background-image: url('../images/facebook-hover.svg');
+}
+
+.facebook-icon {
+    background-image: url('../images/facebook.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+}
+
+.login-box form input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem 0;
+    padding-left: 1rem;
+    border-radius: .2rem;
+    border: 1px solid #000000;
+}
+
+.login-box form button {
+    background-color: #133b5c;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem 0;
+    padding-left: 1rem;
+    border-radius: .2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.login-box form button:hover {
+    background-color: #1d2d50;
+}
+
+.reg-link {
+    width: 10rem;
+    margin: .5rem auto;
+}
+
+.reg-link a {
+    color: #000000;
+}
+
+.reg-link:hover {
+    border-bottom: 1px solid #000000;
+}
+
+.register-box {
+    background-color: #ffffff;
+    width: 25rem;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0rem 0rem 2rem 0 #00000042;
+}
+
+.register-box h1 {
+    color: #000000;
+}
+
+.register-box form input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem 0;
+    padding-left: 1rem;
+    border-radius: .2rem;
+    border: 1px solid #000000;
+}
+
+.register-box form button {
+    background-color: #133b5c;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem 0;
+    padding-left: 1rem;
+    border-radius: .2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.register-box form button:hover {
+    background-color: #1d2d50;
+}
+
+.login-link {
+    width: 7.5rem;
+    margin: auto;
+}
+
+.login-link a {
+    color: #000000;
+}
+
+.login-link:hover {
+    border-bottom: 1px solid #000000;
+}
+
+.profile-box {
+    line-height: 3rem;
+    background-color: #ffffff;
+    width: 25rem;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0rem 0rem 2rem 0 #00000042;
+}
+
+.profile-box h1 {
+    color: #000000;
+}
+
+.profile-box h5 {
+    color: #000000;
+    text-align: left;
+}
+
+.profile-box a {
+    font-size: 1rem;
+    color: #000000;
+    border: .1rem solid #000000;
+    border-radius: .2rem;
+    padding: .3rem;
+    margin: 1rem auto;
+}
+
+.profile-box a:hover {
+    background-color: #1d2d50;
+    color: #ffffff;
+}
+
+.add-box {
+    line-height: 3rem;
+    background-color: #ffffff;
+    width: 25rem;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0rem 0rem 2rem 0 #00000042;
+}
+
+.add-box h1 {
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.add-box form input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem 0;
+    padding-left: 1rem;
+    border-radius: .2rem;
+    border: 1px solid #000000;
+}
+
+.add-box form textarea {
+    font-size: .8rem;
+    width: 100%;
+    height: 10rem;
+    margin: .5rem 0;
+    padding: 1rem;
+    border-radius: .2rem;
+    border: 1px solid #000000;
+}
+
+.add-box form button {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 3rem;
+    width: 8rem;
+    margin: .5rem .5rem;
+    padding: 1rem;
+    border-radius: .2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.confirm {
+    background-color: #00C851;
+}
+
+.confirm:hover {
+    background-color: #007E33;
+}
+
+.cancel {
+    background-color: #ff4444;
+}
+
+.cancel:hover {
+    background-color: #CC0000;
+}
+
+.mytopicpage {
+    text-align: center;
+    color: #fcdab7;
+}
+
+.mytopicpage h1 {
+    margin: 1rem 0;
+}
+
+.my-topic-box {
+    border: 1px solid #fcdab7;
+    width: 28rem;
+    margin: 4rem auto;
+    padding: 1rem 0;
+    border-radius: 1rem;
+}
+
+.delete-btn {
+    background-image: url('../images/trash.svg');
+    width: 1rem;
+    height: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-image: url('../images/trash-hover.svg');
+}
+
+.page-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    margin: 0 auto;
+}
+
+.topicpage {
+    line-height: 1.5rem;
+    background-color: #ffffff;
+    color: #000000;
+    width: 25rem;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: 0rem 0rem 2rem 0 #00000042;
+}
+
+.topicpage h4 {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid #000000;
+    word-wrap: break-word;
+}
+
+.topicpage h5 {
+    word-wrap: break-word;
+}
+
+.topicpage h6 {
+    padding-top: .5rem;
+    margin-top: .5rem;
+    border-top: 1px solid #000000;
+}
+
+.comment-box {
+    line-height: 1.5rem;
+    background-color: #ffffff;
+    color: #000000;
+    width: 25rem;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: 0rem 0rem 2rem 0 #00000042;
+}
+
+.comment-box h4 {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid #000000;
+}
+
+.comment-text {
+    border: 1px solid #000000;
+    border-radius: .2rem;
+    padding: 1rem;
+    word-wrap: break-word;
+    margin-bottom: .5rem;
+}
+
+.comment-text h5 {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid #000000;
+    font-weight: normal;
+}
+
+.comment-text h6 {
+    font-weight: normal;
+}
+
+.comment-add-box form textarea {
+    font-size: .8rem;
+    width: 100%;
+    height: 5rem;
+    margin: .5rem 0;
+    padding: 1rem;
+    border-radius: .2rem;
+    border: 1px solid #000000;
+}
+
+.comment-add-box form button {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 2rem;
+    width: 6rem;
+    padding: .5rem;
+    border-radius: .2rem;
+    border: none;
+    cursor: pointer;
+}

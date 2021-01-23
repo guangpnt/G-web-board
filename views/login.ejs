@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>webboard</title>
+</head>
+
+<body>
+    <div class="nav-bar-mobile">
+        <a href="/" class="logo"></a>
+        <div class="nav-menu">
+            <% if(email == null) { %>
+                <a href="/login" class="add-topic"></a>
+                <a href="/login" class="account"></a>
+            <% } %>
+            <% if(email !== null) { %>
+                <a href="/add" class="add-topic"></a>
+                <div class="profile-btn"><%= username.charAt(0) %></div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="login-box">
+        <h1>Sign in</h1>
+        <div class="auth">
+            <a href="/google" class="google-btn">
+                <span class="google-icon"></span>
+                <h6>Google</h6>
+            </a>
+            <!--<a href="#" class="facebook-btn">
+                <span class="facebook-icon"></span>
+                <h6>Facebook</h6>
+            </a>-->
+        </div>
+        <form method="post">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <% if (typeof err_msg !== 'undefined') { %>
+            <div class="msg">
+                <div class="danger-mark"></div>
+                <span><%= err_msg %></span>
+            </div>
+            <% } %>
+            <button type="submit">Sign in</button>
+        </form>
+        <div class="reg-link">
+            <a href="/register">
+                <h6>Don't have an account ?</h6>
+            </a>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>webboard</title>
+</head>
+
+<body>
+    <div class="nav-bar-mobile">
+        <a href="/" class="logo"></a>
+        <div class="nav-menu">
+            <% if(email == null) { %>
+                <a href="/login" class="add-topic"></a>
+                <a href="/login" class="account"></a>
+            <% } %>
+            <% if(email !== null) { %>
+                <a href="/add" class="add-topic"></a>
+                <div class="profile-btn"><%= username.charAt(0) %></div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="profile-bg hide"></div>
+        <div class="profile-menu hide">
+            <div class="close-btn">
+                <span class="left-line"></span>
+                <span class="right-line"></span>
+            </div>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/mytopic">My topic</a>
+                </li>
+                <li>
+                    <a href="/logout">Sign out</a>
+                </li>
+            </ul>
+        </div>
+
+    <div class="mytopicpage">
+        <div class="my-topic-box">
+            <h1>My topic</h1>
+            <div class="topic-box">
+                <% if(result.length > 0) { %>
+                    <% for (i=0;i<result.length;i++) { %>
+                    <a href="/topic/<%= result[i]._id %>" class="topic-item">
+                        <div class="topic-info">
+                            <h4><%= result[i].title %></h4>
+                            <div class="topic-user">
+                                Name : <%= result[i].username %><br>
+                                Date : <%= date[i] %>
+                            </div>
+                        </div>
+                        <a href="/mytopic/delete/<%= result[i]._id %>" class="delete-btn"></a>
+                    </a>
+                    <% } %>
+                <% } else { %>
+                        <h5>Not have a topic.</h5>    
+                <% } %>
+            </div>
+            <!--<div class="page-num">
+                <span class="prev-page">prev</span>
+                <h6 class="page-num">page : 1</h6>
+                <span class="next-page">next</span>
+            </div>-->
+        </div> 
+    </div> 
+    
+    
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

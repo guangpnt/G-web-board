@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>webboard</title>
+</head>
+
+<body>
+    <div class="nav-bar-mobile">
+        <a href="/" class="logo"></a>
+        <div class="nav-menu">
+            <a href="#" class="add-topic"></a>
+            <% if(email == null) { %>
+                <a href="/login" class="account"></a>
+            <% } %>
+            <% if(email !== null) { %>
+                <div class="profile-btn"><%= username.charAt(0) %></div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="profile-bg hide"></div>
+        <div class="profile-menu hide">
+            <div class="close-btn">
+                <span class="left-line"></span>
+                <span class="right-line"></span>
+            </div>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/mytopic">My topic</a>
+                </li>
+                <li>
+                    <a href="/logout">Sign out</a>
+                </li>
+            </ul>
+        </div>
+
+    <div class="add-box">
+        <h1>Add Topic</h1>
+        <form method="post">
+            <input type="title" id="title" name="title" placeholder="Title">
+            <textarea id="message" name="message" placeholder="type here"></textarea>
+            <% if (typeof err_msg !== 'undefined') { %>
+                <div class="msg">
+                    <div class="danger-mark"></div>
+                    <span><%= err_msg %></span>
+                </div>
+            <% } %>
+            <button type="submit" class="confirm">Confirm</button>
+            <button type="reset" class="cancel">Cancel</button>
+        </form>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
